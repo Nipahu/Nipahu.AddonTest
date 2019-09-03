@@ -1,0 +1,21 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    xmlns:viewModels="clr-namespace:Nipahu.AddonTest.AddonDemo.ViewModels"
+                    xmlns:addon="clr-namespace:Nipahu.AddonTest.AddonDemo.Addon"
+                    mc:Ignorable="d">
+
+    <addon:WindowAddonItem x:Key="WorldCommandAddon" Target="SettingsMenu"
+                           d:DataContext="{d:DesignInstance viewModels:MainViewModelAddon}">
+        <MenuItem Header="World" Command="{Binding WorldCommand}" />
+    </addon:WindowAddonItem>
+
+    <addon:WindowAddonItem x:Key="FoobarCommandAddon" Target="TopMenu"
+                           d:DataContext="{d:DesignInstance viewModels:MainViewModelAddon}">
+        <MenuItem Header="Foo">
+            <MenuItem Header="Bar" Command="{Binding FoobarCommand}" />
+        </MenuItem>
+    </addon:WindowAddonItem>
+
+</ResourceDictionary>
